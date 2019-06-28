@@ -1,0 +1,94 @@
+/* -- All about this -- */
+.content-box {
+  box-sizing: content-box;
+}
+
+.border-box {
+  box-sizing: border-box;
+}
+/* ------------------- */
+
+body {
+  font-family: -apple-system, Roboto, sans-serif;
+}
+
+p {
+  margin: 0;
+}
+
+.main {
+  display: grid;
+  grid-template-areas:  'title title'
+                        'box-c box-b';
+  grid-template-columns: 1fr 1fr;
+  grid-auto-flow: column;
+  gap: 60px 20px;
+  padding-bottom: 50px;
+}
+
+.heading {
+  grid-column: 1/-1;
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.container {
+  text-align: center;
+}
+
+.box-wrapper {
+  padding-top: 5px;
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+.box {
+  position: relative;
+  width: 65%;
+  margin: 20px auto;
+  padding: 70px;
+  background-color: lightgreen;
+  border: 30px solid rgba(0, 0, 0, .7);
+}
+
+.box > span {
+  position: absolute;
+  left: 50%;
+  width: 100%;
+  font-size: 20px;
+  transform: translateX(-50%);
+}
+
+.box-border {
+  top: -15%;
+  color: white;
+}
+
+.box-padding {
+  top: 10%;
+}
+
+.content {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-size: 22px;
+}
+
+.content-box .content {
+  background-color: lightcoral;
+}
+
+.border-box .content {
+  background-color: lightskyblue;
+}
+
+@media (max-width: 1399px) {
+  .main {
+    grid-template-areas:  'title'
+                          'box-c'
+                          'box-b';
+    grid-template-columns: 1fr;
+    column-gap: 0;
+  }
+}
