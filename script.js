@@ -16,7 +16,7 @@ const renderStaticElements = arr => arr.forEach(el => el.insertAdjacentHTML('aft
 const results = [
   box => `while expected box width: ${getRelativeWidth(box)}% of the parent element
     (<span class="expectedBoxWidth">${getWidth(box.querySelector('.content'))}</span>px)`,
-  box => `matches with expected box width: ${getRelativeWidth(box)}% of the parent element
+  box => `matches the expected box width: ${getRelativeWidth(box)}% of the parent element
     (<span class="expectedBoxWidth">${getWidth(box)}</span>px)`
 ]
 
@@ -50,7 +50,6 @@ const handleResize = () => {
 
 window.addEventListener('resize', handleResize)
 
-// TODO: Place on GitHub
 // TODO: Calculate border and padding value positions in styles
 // TODO: Add value user inputs
 // TODO: Update with request animation frame?
