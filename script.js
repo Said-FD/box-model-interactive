@@ -50,6 +50,5 @@ const handleResize = () => {
 
 window.addEventListener('resize', handleResize)
 
-// TODO: Calculate border and padding value positions in styles
 // TODO: Add value user inputs
 // TODO: Update with request animation frame?

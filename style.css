@@ -8,6 +8,11 @@
 }
 /* ------------------- */
 
+:root {
+  --padding: 70;
+  --border-width: 30;
+}
+
 body {
   font-family: -apple-system, Roboto, sans-serif;
 }
@@ -47,26 +52,27 @@ p {
   position: relative;
   width: 65%;
   margin: 20px auto;
-  padding: 70px;
+  padding: calc(var(--padding) * 1px);
   background-color: lightgreen;
-  border: 30px solid rgba(0, 0, 0, .7);
+  border: calc(var(--border-width) * 1px) solid rgba(0, 0, 0, .7);
 }
 
 .box > span {
   position: absolute;
   left: 50%;
+  display: block;
   width: 100%;
   font-size: 20px;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
 }
 
 .box-border {
-  top: -15%;
+  top: calc(var(--border-width) / 2 * -1px);
   color: white;
 }
 
 .box-padding {
-  top: 10%;
+  top: calc(var(--padding) / 2 * 1px);
 }
 
 .content {
