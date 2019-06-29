@@ -32,6 +32,20 @@
         </div>
       </div>
     </div>
+
+    <fieldset>
+      <!-- Needs this <div> wrapper as <fieldset> can't be a flex container -->
+      <div class="user-input">
+        <div class="input-wrapper">
+          <label for="border-input">border-width</label>
+          <input type="number" name="border-width" id="border-input">
+        </div>
+        <div class="input-wrapper">
+          <label for="padding-input">padding</label>
+          <input type="number" name="padding" id="padding-input">
+        </div>
+      </div>
+    </fieldset>
   </main>
   <script src="script.js"></script>
 </body>

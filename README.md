@@ -1,6 +1,6 @@
 # README
 
-Simple interactive demonstration of the box-sizing values behavior (difference between content-box and border-box)
+Simple interactive demonstration of the box-sizing values behavior (difference between content-box and border-box).
 > You can find it here: https://said-fd.github.io/box-model-interactive/.
 
 

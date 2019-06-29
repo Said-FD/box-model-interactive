@@ -1,5 +1,7 @@
+const root = document.documentElement
 const boxes = [...document.querySelectorAll('.box')]
 const contents = [...document.querySelectorAll('.content')]
+const inputs = [...document.querySelectorAll('input')]
 
 const getProp = (el, prop) => Math.ceil(parseInt(window.getComputedStyle(el).getPropertyValue(prop)))
 const getWidth = el => Math.ceil(el.offsetWidth)
@@ -48,7 +50,12 @@ const handleResize = () => {
   })
 }
 
-window.addEventListener('resize', handleResize)
+const handleUserInput = function() {
+  root.style.setProperty(`--${this.name}`, this.value)
+}
 
-// TODO: Add value user inputs
+window.addEventListener('resize', handleResize)
+inputs.forEach(input => input.addEventListener('input', handleUserInput))
+
+// TODO: Add visualization of the updated values from the user input
 // TODO: Update with request animation frame?
