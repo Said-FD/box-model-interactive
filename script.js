@@ -11,8 +11,8 @@ document.querySelector('.relativeWidth').textContent = `${getRelativeWidth(boxes
 
 const renderContentWidth = arr => arr.forEach(el => el.textContent = `Content width: ${getWidth(el)}px`)
 const renderStaticElements = arr => arr.forEach(el => el.insertAdjacentHTML('afterbegin', `
-  <span class="box-border">border-width: ${getProp(el, 'border-width')}px</span>
-  <span class="box-padding">padding: ${getProp(el, 'padding')}px</span>
+  <span class="border-width">border-width: ${getProp(el, 'border-width')}px</span>
+  <span class="padding">padding: ${getProp(el, 'padding')}px</span>
 `))
 
 const results = [
@@ -27,8 +27,8 @@ const renderDescription = () => boxes.forEach((box, i) => box.insertAdjacentHTML
     Total box width = <span class="totalBoxWidth">${getWidth(box)}</span>px, where
   </p>
   <p>
-    border: ${getProp(box, 'border-width') * 2}px (${getProp(box, 'border-width')}px &times; 2) +
-    padding: ${getProp(box, 'padding') * 2}px (${getProp(box, 'padding')}px &times; 2) +
+    border: <span class="border-width-desc">${getProp(box, 'border-width') * 2}px (${getProp(box, 'border-width')}px</span> &times; 2) +
+    padding: <span class="padding-desc">${getProp(box, 'padding') * 2}px (${getProp(box, 'padding')}px</span> &times; 2) +
     content: <span class="contentWidth">${getWidth(contents[i])}</span>px,
   </p>
   <p>
@@ -52,10 +52,14 @@ const handleResize = () => {
 
 const handleUserInput = function() {
   root.style.setProperty(`--${this.name}`, this.value)
+
+  document.querySelectorAll(`.${this.name}`).forEach(el => el.textContent = `${this.name}: ${this.value}px`)
+  document.querySelectorAll(`.${this.name}-desc`).forEach(el => el.textContent = `${this.value * 2}px (${this.value}px`)
+
+  handleResize()
 }
 
 window.addEventListener('resize', handleResize)
 inputs.forEach(input => input.addEventListener('input', handleUserInput))
 
-// TODO: Add visualization of the updated values from the user input
 // TODO: Update with request animation frame?

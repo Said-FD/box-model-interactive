@@ -68,12 +68,12 @@ p {
   transform: translate(-50%, -50%);
 }
 
-.box-border {
+.border-width {
   top: calc(var(--border-width) / 2 * -1px);
   color: white;
 }
 
-.box-padding {
+.padding {
   top: calc(var(--padding) / 2 * 1px);
 }
 
@@ -100,7 +100,30 @@ fieldset {
 
 .user-input {
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.user-input label {
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+.user-input input {
+  width: 80px;
+  padding: 5px 10px;
+  font-size: 20px;
+  background-color: lightgreen;
+}
+
+.user-input input[name = 'border-width'] {
+  color: white;
+  background-color: #2b472b;
 }
 
 @media (max-width: 1399px) {

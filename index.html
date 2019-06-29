@@ -12,7 +12,7 @@
     <div class="heading">
       <h1>Box Model Explanation</h1>
       <p>Boxes "width" property have the same value: <span class="relativeWidth">65%</span></p>
-      <p>All values are dynamic, try to resize a window</p>
+      <p>All values are dynamic, try to resize a window and change values of border-width or padding</p>
     </div>
 
     <div class="container">
@@ -38,11 +38,11 @@
       <div class="user-input">
         <div class="input-wrapper">
           <label for="border-input">border-width</label>
-          <input type="number" name="border-width" id="border-input">
+          <input type="number" name="border-width" id="border-input" min="30" max="200" step="1">
         </div>
         <div class="input-wrapper">
           <label for="padding-input">padding</label>
-          <input type="number" name="padding" id="padding-input">
+          <input type="number" name="padding" id="padding-input" min="30" max="200" step="1">
         </div>
       </div>
     </fieldset>
