@@ -2,6 +2,7 @@ const root = document.documentElement
 const boxes = [...document.querySelectorAll('.box')]
 const contents = [...document.querySelectorAll('.content')]
 const inputs = [...document.querySelectorAll('input')]
+const [inputBorder, inputPadding] = inputs
 
 const getProp = (el, prop) => Math.ceil(parseInt(window.getComputedStyle(el).getPropertyValue(prop)))
 const getWidth = el => Math.ceil(el.offsetWidth)
@@ -11,8 +12,8 @@ document.querySelector('.relativeWidth').textContent = `${getRelativeWidth(boxes
 
 const renderContentWidth = arr => arr.forEach(el => el.textContent = `Content width: ${getWidth(el)}px`)
 const renderStaticElements = arr => arr.forEach(el => el.insertAdjacentHTML('afterbegin', `
-  <span class="border-width">border-width: ${getProp(el, 'border-width')}px</span>
-  <span class="padding">padding: ${getProp(el, 'padding')}px</span>
+  <span class="border-width">border-width: ${inputBorder.value}px</span>
+  <span class="padding">padding: ${inputPadding.value}px</span>
 `))
 
 const results = [
@@ -27,8 +28,8 @@ const renderDescription = () => boxes.forEach((box, i) => box.insertAdjacentHTML
     Total box width = <span class="totalBoxWidth">${getWidth(box)}</span>px, where
   </p>
   <p>
-    border: <span class="border-width-desc">${getProp(box, 'border-width') * 2}px (${getProp(box, 'border-width')}px</span> &times; 2) +
-    padding: <span class="padding-desc">${getProp(box, 'padding') * 2}px (${getProp(box, 'padding')}px</span> &times; 2) +
+    border: <span class="border-width-desc">${inputBorder.value * 2}px (${inputBorder.value}px</span> &times; 2) +
+    padding: <span class="padding-desc">${inputPadding.value * 2}px (${inputPadding.value}px</span> &times; 2) +
     content: <span class="contentWidth">${getWidth(contents[i])}</span>px,
   </p>
   <p>

@@ -107,21 +107,22 @@ fieldset {
 .input-wrapper {
   display: flex;
   align-items: center;
-}
-
-.user-input label {
-  margin-right: 10px;
   font-size: 20px;
 }
 
-.user-input input {
+.input-wrapper > input,
+.input-wrapper > span {
+  margin-left: 10px;
+}
+
+.input-wrapper > input {
   width: 80px;
   padding: 5px 10px;
   font-size: 20px;
   background-color: lightgreen;
 }
 
-.user-input input[name = 'border-width'] {
+.input-wrapper > input[name = 'border-width'] {
   color: white;
   background-color: #2b472b;
 }
