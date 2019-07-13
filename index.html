@@ -4,51 +4,71 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Box Model</title>
+  <title>Box Sizing</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <main class="main">
     <div class="heading">
-      <h1>Box Model Explanation</h1>
-      <p>Boxes "width" property have the same value: <span class="relativeWidth">65%</span></p>
-      <p>Margin does not shown as it has no influence on the box size</p>
-      <p>All values are dynamic, try to resize a window and change values of border-width or padding</p>
-    </div>
-
-    <div class="container">
-      <h2>box-sizing: content-box</h2>
-      <div class="box-wrapper">
-        <div class="box content-box">
-          <p class="content">Content</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="container">
-      <h2>box-sizing: border-box</h2>
-      <div class="box-wrapper">
-        <div class="box border-box">
-          <p class="content">Content</p>
-        </div>
-      </div>
+      <h1 class="heading-title" data-medium>box-sizing calculation</h1>
+      <p>Margin does not shown as it has no influence on the box size.</p>
+      <p>All values are dynamic, try to change values of the width, padding or border-width properties.</p>
     </div>
 
     <fieldset>
       <!-- Needs this <div> wrapper as <fieldset> can't be a flex container -->
-      <div class="user-input">
+      <div class="user-input" data-monospace>
         <div class="input-wrapper">
-          <label for="border-input">border-width:</label>
-          <input type="number" name="border-width" id="border-input" min="30" max="200" step="1" value="30">
-          <span>px</span>
+          <label for="width-input">width</label>
+          <input type="number" name="width" id="width-input" min="100" max="500" step="1" value="300">
+          <span data-light-text>px</span>
         </div>
         <div class="input-wrapper">
-          <label for="padding-input">padding:</label>
-          <input type="number" name="padding" id="padding-input" min="30" max="200" step="1" value="70">
-          <span>px</span>
+          <label for="padding-input">padding</label>
+          <input type="number" name="padding" id="padding-input" min="10" max="200" step="1" value="40">
+          <span data-light-text>px</span>
+        </div>
+        <div class="input-wrapper">
+          <label for="border-input">border-width</label>
+          <input type="number" name="border-width" id="border-input" min="10" max="200" step="1" value="10">
+          <span data-light-text>px</span>
         </div>
       </div>
     </fieldset>
+
+    <div class="container">
+      <h2 class="container-title" data-monospace data-thin>box-sizing:
+        <span data-highlighted>content-box</span>;
+      </h2>
+      <div class="box-wrapper">
+        <div class="box content-box">
+          <div class="content">
+            <p data-thin>Content width</p>
+          </div>
+          <div class="description">
+            <p>Content width <span data-monospace>= width</span></p>
+            <p>Total element width <span data-monospace>= width + padding + border-width</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="container">
+      <h2 class="container-title" data-monospace data-thin>box-sizing:
+        <span data-highlighted>border-box</span>;
+      </h2>
+      <div class="box-wrapper">
+        <div class="box border-box">
+          <div class="content">
+            <p data-thin>Content width</p>
+          </div>
+          <div class="description">
+            <p>Total element width <span data-monospace>= width</span></p>
+            <p>Content width <span data-monospace>= width - padding - border-width</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
   </main>
   <script src="script.js"></script>
 </body>
