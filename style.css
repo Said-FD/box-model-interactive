@@ -8,6 +8,13 @@
 }
 /* ------------------- */
 
+/* Just use this rule and you'll get a predictable sizes behavior */
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
 :root {
   --width: 300;
   --padding: 40;
@@ -128,7 +135,6 @@ fieldset {
 }
 
 .input-wrapper input {
-  box-sizing: border-box;
   width: 60px;
   padding: 5px 0 5px 10px;
   font-family: inherit;
@@ -157,7 +163,6 @@ fieldset {
 }
 
 .content {
-  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: center;
